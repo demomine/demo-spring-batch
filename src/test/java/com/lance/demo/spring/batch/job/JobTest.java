@@ -20,12 +20,24 @@ public class JobTest extends TestConfig {
     private JobLauncher jobLauncher;
     @Autowired
     private Job job;
+
+    @Autowired
+    private Job jobRestart;
     @Test
     public void job() throws Exception {
         HashMap parameters = new HashMap();
         parameters.put("random", new JobParameter(Long.valueOf((long)(Math.random() * 1000000.0D))));
         JobParameters jobParameters =  new JobParameters(parameters);
         jobLauncher.run(job, jobParameters);
+
+    }
+
+    @Test
+    public void jobRestart() throws Exception {
+        HashMap parameters = new HashMap();
+        parameters.put("1", new JobParameter("1"));
+        JobParameters jobParameters =  new JobParameters(parameters);
+        jobLauncher.run(jobRestart, jobParameters);
 
     }
 }
