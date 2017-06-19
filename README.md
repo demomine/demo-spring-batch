@@ -9,3 +9,4 @@
 6.  javaConfig
 7.  JobRepository配置
 8.  事务配置
+9.  jobLauncher 每次执行需要新的JobParameters从而触发新的JobInstance

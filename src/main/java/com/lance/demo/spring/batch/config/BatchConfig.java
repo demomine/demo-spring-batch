@@ -74,4 +74,14 @@ public class BatchConfig {
         return launcher;
     }
 
+    //@Bean //jobOperator已经通过@EnableBatchProcessing生成  不再需要手动写
+    public JobOperator jobOperator(JobRepository jobRepository, JobRegistry jobRegistry, JobExplorer jobExplorer,JobLauncher jobLauncher) {
+        SimpleJobOperator jobOperator = new SimpleJobOperator();
+        jobOperator.setJobRepository(jobRepository);
+        jobOperator.setJobExplorer(jobExplorer);
+        jobOperator.setJobLauncher(jobLauncher);
+        jobOperator.setJobRegistry(jobRegistry);
+        return jobOperator;
+    }
+
 }
