@@ -58,7 +58,7 @@ public class MybatisConfig {
         return sessionFactory;
     }
 
-    @PostConstruct
+    //@PostConstruct
     public void setupJobSchema() {
         ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
         populator.addScript(this.resourceLoader.getResource("org/springframework/batch/core/schema-drop-mysql.sql"));
