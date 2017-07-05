@@ -60,7 +60,11 @@
       <artifactId>lombok</artifactId>
       <version>${lombok.version}</version>
     </dependency>
-
+    <dependency>
+      <groupId>commons-net</groupId>
+      <artifactId>commons-net</artifactId>
+      <version>3.6</version>
+    </dependency>
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>

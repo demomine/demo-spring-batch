@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by perdonare on 2017/6/16.
  */
 @Configuration
-public class JobConfig {
+public class FileDownloadJob {
     @Autowired
     private JobBuilderFactory jobs;
     @Autowired
@@ -29,6 +29,11 @@ public class JobConfig {
     @Bean
     protected Step step() throws Exception {
         return steps.get("step1").tasklet(new SimpleTasklet()).build();
+    }
+
+    @Bean
+    protected Step ftpFileDownloadStep() {
+        steps.get("ftpFileDownloadStep").tasklet()
     }
 
 }
